@@ -1,96 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyreEcoMint Onboarding - Learn How to Use the Platform</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0B4619',secondary:'#22C55E'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .progress-bar {
+            transition: width 0.3s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-primary text-white fixed top-0 w-full z-50 shadow-lg">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-['Pacifico'] text-white">PyreEcoMint</h1>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <span class="text-green-200 text-sm">Onboarding Tutorial</span>
+                        <div class="w-48 bg-green-800 rounded-full h-2">
+                            <div id="header-progress" class="bg-secondary h-2 rounded-full progress-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://readdy.ai/home/88100447-3bf1-4f40-b28e-8e592f4858cf/579e2f84-8fc5-4139-9fce-309ce45ad3e8" data-readdy="true" class="text-white hover:text-green-200 transition-colors flex items-center space-x-2">
+                        <i class="ri-arrow-left-line w-4 h-4 flex items-center justify-center"></i>
+                        <span>Back to Home</span>
+                    </a>
+                    <button id="skip-tutorial" class="text-green-200 hover:text-white transition-colors">Skip Tutorial</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <div id="welcome-section" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-green-800 text-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="mb-8">
+                    <img src="https://readdy.ai/api/search-image?query=modern%20eco-friendly%20recycling%20illustration%20with%20green%20plants%20growing%20from%20recycled%20materials%2C%20clean%20minimalist%20design%2C%20bright%20colors%2C%20sustainable%20technology%20concept%2C%20digital%20art%20style%2C%20environmental%20awareness%20theme%2C%20circular%20economy%20visualization%2C%20nature%20and%20technology%20harmony%2C%20professional%20illustration%20with%20white%20background&width=400&height=300&seq=welcome001&orientation=landscape" alt="Welcome to PyreEcoMint" class="w-80 h-60 mx-auto rounded-2xl shadow-2xl object-cover object-top">
+                </div>
+                <h1 class="text-5xl font-bold mb-6 fade-in">Welcome to PyreEcoMint</h1>
+                <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto fade-in">Transform your waste into wealth while making a positive impact on the environment. Let us guide you through everything you need to know to get started.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 fade-in">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-money-dollar-circle-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Earn Money</h3>
+                        <p class="text-green-100 text-sm">Turn your recyclables into cash rewards</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 fade-in">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-leaf-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Help Environment</h3>
+                        <p class="text-green-100 text-sm">Contribute to a sustainable future</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 fade-in">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-smartphone-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Easy to Use</h3>
+                        <p class="text-green-100 text-sm">Simple scheduling and tracking</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <button id="start-tutorial" class="bg-secondary hover:bg-green-600 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors whitespace-nowrap pulse-animation">
+                        Start Tutorial
+                    </button>
+                    <button id="skip-to-home" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors whitespace-nowrap">
+                        Skip & Explore
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tutorial-container" class="hidden min-h-screen bg-white">
+            <div class="max-w-6xl mx-auto px-6 py-12">
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 id="step-title" class="text-3xl font-bold text-gray-800">Step 1: Account Setup</h2>
+                        <div class="flex items-center space-x-2">
+                            <span id="step-counter" class="text-gray-600">1 of 4</span>
+                            <div class="w-32 bg-gray-200 rounded-full h-2">
+                                <div id="progress-bar" class="bg-secondary h-2 rounded-full progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-content" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-96">
+                    <div id="step-1" class="step-content">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Set Up Your Profile</h3>
+                            <p class="text-gray-600 mb-6">Complete your profile to get personalized pickup recommendations and track your environmental impact.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-user-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Personal Information</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Add your name, contact details, and preferences</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-map-pin-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Location Settings</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Set your pickup address and service area</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-notification-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Notification Preferences</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Choose how you want to receive updates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="step-2" class="step-content hidden">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Schedule Your Pickups</h3>
+                            <p class="text-gray-600 mb-6">Learn how to schedule convenient pickup times that work with your schedule.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-calendar-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Choose Date & Time</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Select from available time slots that fit your schedule</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-recycle-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Specify Materials</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Tell us what types of recyclables you have</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-truck-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Pickup Confirmation</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Get instant confirmation and tracking details</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="step-3" class="step-content hidden">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Understanding Rewards</h3>
+                            <p class="text-gray-600 mb-6">Discover how you earn EcoPoints and convert them into real money or eco-friendly products.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-coins-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Earn EcoPoints</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Get points based on weight and type of materials</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-exchange-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Redeem Rewards</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Convert points to cash or eco-friendly products</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-trophy-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Bonus Programs</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Earn extra points through referrals and challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="step-4" class="step-content hidden">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Track Your Impact</h3>
+                            <p class="text-gray-600 mb-6">Monitor your environmental contribution and see how you're making a difference.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-bar-chart-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Environmental Metrics</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Track CO₂ offset, materials recycled, and trees saved</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-target-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Set Goals</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Create personal sustainability targets and track progress</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                            <i class="ri-share-line text-white text-sm"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-800">Share Achievements</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 ml-9">Share your environmental impact with friends and family</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div id="demo-content">
+                            <div id="demo-1" class="demo-content">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Profile Setup Demo</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                        <input type="text" value="Monica Johnson" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm" readonly>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                                        <div class="flex items-center space-x-2">
+                                            <i class="ri-map-pin-line text-secondary w-4 h-4 flex items-center justify-center"></i>
+                                            <span class="text-sm text-gray-600">Lagos, Nigeria</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Notifications</label>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-10 h-6 bg-secondary rounded-full relative">
+                                                <div class="w-4 h-4 bg-white rounded-full absolute right-1 top-1"></div>
+                                            </div>
+                                            <span class="text-sm text-gray-600">Email & SMS enabled</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="demo-2" class="demo-content hidden">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Schedule Pickup Demo</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Select Date</label>
+                                        <div class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                            April 28, 2024
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Time Slot</label>
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <div class="bg-secondary text-white rounded-lg px-3 py-2 text-sm text-center">9:00 AM</div>
+                                            <div class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-center">2:00 PM</div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Materials</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-xs">Plastic</span>
+                                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-xs">Paper</span>
+                                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs">Glass</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="demo-3" class="demo-content hidden">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Rewards Calculator</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-sm font-medium text-gray-700">Plastic Bottles (5kg)</span>
+                                            <span class="text-sm font-bold text-secondary">₦450</span>
+                                        </div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-sm font-medium text-gray-700">Paper (3kg)</span>
+                                            <span class="text-sm font-bold text-secondary">₦180</span>
+                                        </div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-sm font-medium text-gray-700">Aluminum Cans (1kg)</span>
+                                            <span class="text-sm font-bold text-secondary">₦320</span>
+                                        </div>
+                                        <div class="border-t border-gray-200 pt-2 mt-2">
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-gray-800">Total Earnings</span>
+                                                <span class="text-lg font-bold text-secondary">₦950</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-secondary bg-opacity-10 rounded-lg p-4">
+                                        <div class="flex items-center space-x-2">
+                                            <i class="ri-information-line text-secondary w-4 h-4 flex items-center justify-center"></i>
+                                            <span class="text-sm text-gray-700">Bonus: +10% for first pickup this month!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="demo-4" class="demo-content hidden">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Impact Dashboard</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm font-medium text-gray-700">CO₂ Offset</span>
+                                            <span class="text-lg font-bold text-secondary">128 kg</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-secondary h-2 rounded-full" style="width: 64%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">64% of monthly goal</span>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm font-medium text-gray-700">Materials Recycled</span>
+                                            <span class="text-lg font-bold text-secondary">45.2 kg</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-secondary h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">75% of monthly goal</span>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm font-medium text-gray-700">Trees Saved</span>
+                                            <span class="text-lg font-bold text-secondary">12</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-secondary h-2 rounded-full" style="width: 40%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">40% of monthly goal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mt-12">
+                    <button id="prev-step" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="ri-arrow-left-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                        Previous
+                    </button>
+                    
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 bg-secondary rounded-full step-indicator active"></div>
+                        <div class="w-3 h-3 bg-gray-300 rounded-full step-indicator"></div>
+                        <div class="w-3 h-3 bg-gray-300 rounded-full step-indicator"></div>
+                        <div class="w-3 h-3 bg-gray-300 rounded-full step-indicator"></div>
+                    </div>
+                    
+                    <button id="next-step" class="bg-secondary hover:bg-green-600 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+                        Next
+                        <i class="ri-arrow-right-line w-4 h-4 flex items-center justify-center ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="completion-section" class="hidden min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary to-green-600 text-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="mb-8">
+                    <img src="https://readdy.ai/api/search-image?query=celebration%20illustration%20with%20confetti%20and%20trophy%20surrounded%20by%20green%20leaves%20and%20recycling%20symbols%2C%20success%20achievement%20theme%2C%20bright%20cheerful%20colors%2C%20digital%20art%20style%2C%20environmental%20victory%20concept%2C%20sustainable%20success%20visualization%2C%20modern%20flat%20design%20with%20white%20background&width=400&height=300&seq=complete001&orientation=landscape" alt="Tutorial Complete" class="w-80 h-60 mx-auto rounded-2xl shadow-2xl object-cover object-top">
+                </div>
+                <h1 class="text-5xl font-bold mb-6">Congratulations!</h1>
+                <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">You've completed the PyreEcoMint onboarding tutorial. You're now ready to start earning money while helping the environment!</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-check-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Profile Ready</h3>
+                        <p class="text-green-100 text-sm">Your account is set up and ready to use</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-calendar-check-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Ready to Schedule</h3>
+                        <p class="text-green-100 text-sm">You know how to book your first pickup</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-trophy-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Earn & Track</h3>
+                        <p class="text-green-100 text-sm">Start earning rewards and tracking impact</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <a href="https://readdy.ai/home/88100447-3bf1-4f40-b28e-8e592f4858cf/579e2f84-8fc5-4139-9fce-309ce45ad3e8" data-readdy="true" class="bg-white hover:bg-gray-100 text-secondary px-8 py-4 !rounded-button text-lg font-semibold transition-colors whitespace-nowrap">
+                        Start Using PyreEcoMint
+                    </a>
+                    <button id="retake-tutorial" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors whitespace-nowrap">
+                        Retake Tutorial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script id="onboarding-navigation">
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentStep = 1;
+            const totalSteps = 4;
+            
+            const welcomeSection = document.getElementById('welcome-section');
+            const tutorialContainer = document.getElementById('tutorial-container');
+            const completionSection = document.getElementById('completion-section');
+            const startButton = document.getElementById('start-tutorial');
+            const skipButton = document.getElementById('skip-tutorial');
+            const skipToHomeButton = document.getElementById('skip-to-home');
+            const nextButton = document.getElementById('next-step');
+            const prevButton = document.getElementById('prev-step');
+            const retakeButton = document.getElementById('retake-tutorial');
+            
+            function showWelcome() {
+                welcomeSection.classList.remove('hidden');
+                tutorialContainer.classList.add('hidden');
+                completionSection.classList.add('hidden');
+            }
+            
+            function showTutorial() {
+                welcomeSection.classList.add('hidden');
+                tutorialContainer.classList.remove('hidden');
+                completionSection.classList.add('hidden');
+                updateStep();
+            }
+            
+            function showCompletion() {
+                welcomeSection.classList.add('hidden');
+                tutorialContainer.classList.add('hidden');
+                completionSection.classList.remove('hidden');
+            }
+            
+            function updateStep() {
+                document.getElementById('step-title').textContent = getStepTitle(currentStep);
+                document.getElementById('step-counter').textContent = `${currentStep} of ${totalSteps}`;
+                
+                const progressPercentage = (currentStep / totalSteps) * 100;
+                document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+                document.getElementById('header-progress').style.width = `${progressPercentage}%`;
+                
+                document.querySelectorAll('.step-content').forEach(content => content.classList.add('hidden'));
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                
+                document.querySelectorAll('.demo-content').forEach(demo => demo.classList.add('hidden'));
+                document.getElementById(`demo-${currentStep}`).classList.remove('hidden');
+                
+                document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+                    if (index < currentStep) {
+                        indicator.classList.add('bg-secondary');
+                        indicator.classList.remove('bg-gray-300');
+                    } else {
+                        indicator.classList.remove('bg-secondary');
+                        indicator.classList.add('bg-gray-300');
+                    }
+                });
+                
+                prevButton.disabled = currentStep === 1;
+                nextButton.textContent = currentStep === totalSteps ? 'Finish' : 'Next';
+            }
+            
+            function getStepTitle(step) {
+                const titles = {
+                    1: 'Step 1: Account Setup',
+                    2: 'Step 2: Schedule Pickups',
+                    3: 'Step 3: Understanding Rewards',
+                    4: 'Step 4: Track Your Impact'
+                };
+                return titles[step];
+            }
+            
+            startButton.addEventListener('click', showTutorial);
+            skipButton.addEventListener('click', () => {
+                window.location.href = 'https://readdy.ai/home/88100447-3bf1-4f40-b28e-8e592f4858cf/579e2f84-8fc5-4139-9fce-309ce45ad3e8';
+            });
+            skipToHomeButton.addEventListener('click', () => {
+                window.location.href = 'https://readdy.ai/home/88100447-3bf1-4f40-b28e-8e592f4858cf/579e2f84-8fc5-4139-9fce-309ce45ad3e8';
+            });
+            retakeButton.addEventListener('click', () => {
+                currentStep = 1;
+                showWelcome();
+            });
+            
+            nextButton.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStep();
+                } else {
+                    showCompletion();
+                }
+            });
+            
+            prevButton.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStep();
+                }
+            });
+        });
+    </script>
+
+    <script id="interactive-elements">
+        document.addEventListener('DOMContentLoaded', function() {
+            const demoElements = document.querySelectorAll('.demo-content input, .demo-content button, .demo-content div[class*="bg-"]');
+            
+            demoElements.forEach(element => {
+                element.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (this.classList.contains('bg-white') && this.classList.contains('border')) {
+                        this.classList.remove('bg-white', 'border-gray-300');
+                        this.classList.add('bg-secondary', 'text-white');
+                    }
+                    
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'absolute bg-gray-800 text-white px-2 py-1 rounded text-xs z-50';
+                    tooltip.textContent = 'This is a demo - click Next to continue';
+                    tooltip.style.top = '100%';
+                    tooltip.style.left = '50%';
+                    tooltip.style.transform = 'translateX(-50%)';
+                    tooltip.style.marginTop = '5px';
+                    
+                    this.style.position = 'relative';
+                    this.appendChild(tooltip);
+                    
+                    setTimeout(() => {
+                        if (tooltip.parentNode) {
+                            tooltip.parentNode.removeChild(tooltip);
+                        }
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+
+    <script id="progress-tracking">
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step-content');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+            
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+    </script>
+</body>
 </html>
