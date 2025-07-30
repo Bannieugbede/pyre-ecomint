@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About EcoMint - Transforming Waste into Wealth</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B4619',
+                        secondary: '#22C55E'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-primary text-white fixed top-0 w-full z-50 shadow-lg">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-['Pacifico'] text-white">EcoMint</h1>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-white hover:text-green-200 transition-colors">Home</a>
+                        <a href="onboarding.html" class="text-white hover:text-green-200 transition-colors">Get Started</a>
+                        <a href="partner-dashboard.html" class="text-white hover:text-green-200 transition-colors">Partner Panel</a>
+                        <a href="admin-dashboard.html" class="text-white hover:text-green-200 transition-colors">Admin Panel</a>
+                        <a href="about.html" class="text-green-200 font-medium">About</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="mobile-menu-toggle" class="md:hidden text-white">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                    <a href="index.html" class="bg-secondary hover:bg-green-600 text-white px-6 py-2 rounded-button font-medium transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-white hover:text-green-200 transition-colors py-2">Home</a>
+                    <a href="onboarding.html" class="text-white hover:text-green-200 transition-colors py-2">Get Started</a>
+                    <a href="partner-dashboard.html" class="text-white hover:text-green-200 transition-colors py-2">Partner Panel</a>
+                    <a href="admin-dashboard.html" class="text-white hover:text-green-200 transition-colors py-2">Admin Panel</a>
+                    <a href="about.html" class="text-green-200 font-medium py-2">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-primary to-green-800 text-white py-20">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">About EcoMint</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto fade-in text-green-100">
+                    We're on a mission to transform Nigeria's waste management landscape by creating a sustainable ecosystem where waste becomes wealth for everyone involved.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Mission</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            To change the perception of waste in Nigeria from a disposable nuisance to a valuable, tradeable commodity. We believe that by creating economic incentives around waste collection and recycling, we can build a more sustainable future while empowering communities.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            EcoMint bridges the gap between waste generators and recycling facilities, creating a seamless marketplace that benefits everyone - from individual households to large-scale recycling operations.
+                        </p>
+                    </div>
+                    <div class="fade-in">
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                            <p class="text-gray-600 mb-6">
+                                A Nigeria where zero waste goes to landfills, where every recyclable material finds its way back into the circular economy, and where environmental stewardship is rewarded with tangible economic benefits.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-green-600">100%</div>
+                                    <div class="text-sm text-gray-600">Waste Diversion Goal</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-green-600">1M+</div>
+                                    <div class="text-sm text-gray-600">Users by 2026</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founders Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Founders</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Passionate entrepreneurs committed to solving Nigeria's waste management challenges through innovative technology and sustainable business models.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in">
+                        <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">DOC</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 text-center mb-2">Dexter Chisom Olocha </h3>
+                        <p class="text-green-600 text-center mb-4 font-medium">Co-Founder, CEO & Product Lead</p>
+                        <p class="text-gray-600 text-center mb-6">
+                            Environmental engineer with 8+ years experience in waste management systems. Previously led sustainability initiatives at major Nigerian corporations and holds an MSc in Environmental Engineering from University of Lagos.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <i class="ri-linkedin-line text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <i class="ri-twitter-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in">
+                        <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">BE</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 text-center mb-2">Barnabas Ejeh</h3>
+                        <p class="text-blue-600 text-center mb-4 font-medium">Co-Founder, CTO & Technical Lead</p>
+                        <p class="text-gray-600 text-center mb-6">
+                            Full-stack developer and tech entrepreneur with expertise in building scalable platforms. Former software architect at leading fintech companies with a passion for using technology to solve social problems.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <i class="ri-linkedin-line text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <i class="ri-github-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">How EcoMint Works</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Our platform creates a seamless connection between waste generators, collection partners, and recycling facilities.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-smartphone-line text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">1. Schedule Pickup</h3>
+                        <p class="text-gray-600">
+                            Users schedule convenient pickup times through our mobile app or website, specifying the types and quantities of recyclable materials.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-truck-line text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">2. Collection & Sorting</h3>
+                        <p class="text-gray-600">
+                            Our trained collection partners pick up materials, sort them according to quality and type, and transport them to processing facilities.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-coins-line text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">3. Earn Rewards</h3>
+                        <p class="text-gray-600">
+                            Users earn EcoPoints based on the weight and quality of materials collected, which can be redeemed for cash or eco-friendly products.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Stats -->
+        <section class="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact So Far</h2>
+                    <p class="text-lg text-green-100 max-w-2xl mx-auto">
+                        Since launching our pilot program, we've made significant strides in transforming waste management in Lagos.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold mb-2">2,847</div>
+                        <div class="text-green-200">Active Users</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold mb-2">45.2T</div>
+                        <div class="text-green-200">Waste Diverted</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold mb-2">₦1.2M</div>
+                        <div class="text-green-200">Paid to Users</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold mb-2">156</div>
+                        <div class="text-green-200">Collection Partners</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Join the EcoMint Revolution</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Whether you're an individual looking to earn from your recyclables, a business wanting to improve your sustainability, or an entrepreneur interested in becoming a collection partner, there's a place for you in the EcoMint ecosystem.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="onboarding.html" class="bg-secondary hover:bg-green-600 text-white px-8 py-4 rounded-button text-lg font-semibold transition-colors">
+                        Get Started Today
+                    </a>
+                    <a href="contact.html" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-4 rounded-button text-lg font-semibold transition-colors">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-['Pacifico'] mb-4">EcoMint</h3>
+                    <p class="text-gray-400">Transforming waste into wealth for a sustainable future.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">User Dashboard</a></li>
+                        <li><a href="partner-dashboard.html" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="admin-dashboard.html" class="hover:text-white transition-colors">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="help.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy.html#cookies" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EcoMint. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

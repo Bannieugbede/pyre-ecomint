@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - EcoMint</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B4619',
+                        secondary: '#22C55E'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-primary text-white fixed top-0 w-full z-50 shadow-lg">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-['Pacifico'] text-white">EcoMint</h1>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-white hover:text-green-200 transition-colors">Home</a>
+                        <a href="onboarding.html" class="text-white hover:text-green-200 transition-colors">Get Started</a>
+                        <a href="partner-dashboard.html" class="text-white hover:text-green-200 transition-colors">Partner Panel</a>
+                        <a href="admin-dashboard.html" class="text-white hover:text-green-200 transition-colors">Admin Panel</a>
+                        <a href="about.html" class="text-white hover:text-green-200 transition-colors">About</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="mobile-menu-toggle" class="md:hidden text-white">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                    <a href="index.html" class="bg-secondary hover:bg-green-600 text-white px-6 py-2 rounded-button font-medium transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-white hover:text-green-200 transition-colors py-2">Home</a>
+                    <a href="onboarding.html" class="text-white hover:text-green-200 transition-colors py-2">Get Started</a>
+                    <a href="partner-dashboard.html" class="text-white hover:text-green-200 transition-colors py-2">Partner Panel</a>
+                    <a href="admin-dashboard.html" class="text-white hover:text-green-200 transition-colors py-2">Admin Panel</a>
+                    <a href="about.html" class="text-white hover:text-green-200 transition-colors py-2">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-primary to-green-800 text-white py-16">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Help Center</h1>
+                <p class="text-xl text-green-100">Find answers to your questions and get the support you need</p>
+            </div>
+        </section>
+
+        <!-- Search -->
+        <section class="py-8 bg-white">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="relative">
+                    <input type="search" placeholder="Search for help articles..." 
+                           class="w-full px-6 py-4 text-lg border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-secondary">
+                    <i class="ri-search-line absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-gray-50" id="faq">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            How do I schedule a pickup?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>To schedule a pickup, simply click the "Schedule Pickup" button on your dashboard, select your preferred date and time, specify the types of materials you have, and confirm your booking. You'll receive a confirmation email with all the details.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            What materials do you accept?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>We accept plastic bottles, cardboard, aluminum cans, glass bottles, paper, and electronic waste. All materials should be clean and sorted. Please check our materials guide for specific requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            How are EcoPoints calculated?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>EcoPoints are calculated based on the weight, type, and quality of materials collected. Plastic bottles earn 5 points per kg, aluminum cans earn 20 points per kg, and cardboard earns 2 points per kg. Bonus points are awarded for consistent participation.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            How do I redeem my rewards?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>You can redeem your EcoPoints for cash (minimum 1000 points = ₦50) or eco-friendly products from our marketplace. Go to your dashboard, click "Redeem Rewards," and choose your preferred redemption option.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            What if I need to cancel or reschedule?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>You can cancel or reschedule your pickup up to 2 hours before the scheduled time. Simply go to your dashboard, find the pickup in your schedule, and click "Reschedule" or "Cancel." No fees apply for changes made within this timeframe.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 rounded-lg flex items-center justify-between">
+                            How do I become a collection partner?
+                            <i class="ri-arrow-down-s-line text-xl"></i>
+                        </button>
+                        <div class="px-6 pb-4 text-gray-600">
+                            <p>To become a collection partner, you need a vehicle, smartphone, and valid ID. Apply through our partner portal, complete the training program, and pass a background check. Partners earn competitive rates and flexible schedules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Still Need Help?</h2>
+                    <p class="text-lg text-gray-600">Our support team is here to assist you</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-chat-3-line text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Live Chat</h3>
+                        <p class="text-gray-600 mb-4">Chat with our support team in real-time</p>
+                        <button class="bg-secondary hover:bg-green-600 text-white px-6 py-2 rounded-button transition-colors">
+                            Start Chat
+                        </button>
+                    </div>
+
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-mail-line text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Email Support</h3>
+                        <p class="text-gray-600 mb-4">Get detailed help via email</p>
+                        <a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-button transition-colors inline-block">
+                            Send Email
+                        </a>
+                    </div>
+
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-phone-line text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Phone Support</h3>
+                        <p class="text-gray-600 mb-4">Speak directly with our team</p>
+                        <a href="tel:+2341234567890" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-button transition-colors inline-block">
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Quick Links</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="onboarding.html" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="ri-user-add-line text-green-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold mb-2">Getting Started</h3>
+                        <p class="text-gray-600 text-sm">Learn how to use EcoMint</p>
+                    </a>
+
+                    <a href="index.html" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="ri-calendar-line text-blue-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold mb-2">Schedule Pickup</h3>
+                        <p class="text-gray-600 text-sm">Book your next collection</p>
+                    </a>
+
+                    <a href="partner-dashboard.html" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="ri-truck-line text-yellow-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold mb-2">Partner Portal</h3>
+                        <p class="text-gray-600 text-sm">For collection partners</p>
+                    </a>
+
+                    <a href="contact.html" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <i class="ri-customer-service-line text-purple-600 text-2xl mb-3"></i>
+                        <h3 class="font-semibold mb-2">Contact Us</h3>
+                        <p class="text-gray-600 text-sm">Get in touch with support</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-['Pacifico'] mb-4">EcoMint</h3>
+                    <p class="text-gray-400">Transforming waste into wealth for a sustainable future.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">User Dashboard</a></li>
+                        <li><a href="partner-dashboard.html" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="admin-dashboard.html" class="hover:text-white transition-colors">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="help.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy.html#cookies" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EcoMint. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
